@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
@@ -13,25 +14,25 @@ import About from "./pages/about";
 
 ReactDOM.render(
   <React.StrictMode>
-  <MoralisProvider
-    serverUrl="https://hpz4yq50hr8y.usemoralis.com:2053/server"
-    appId="FaLY0U96izeaTHPkmvxHUq87YIejSYU0KMBiHS5M"
-  >
-  <BrowserRouter>
+    <MoralisProvider
+      serverUrl="https://hpz4yq50hr8y.usemoralis.com:2053/server"
+      appId="FaLY0U96izeaTHPkmvxHUq87YIejSYU0KMBiHS5M"
+    >
+      <BrowserRouter>
 
-    <TransactionsProvider>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="send" element={<Send />} />
-        <Route path="stake" element={<Stake />} />
-        <Route path="investments" element={<Investments />} />
-        <Route path="about" element={<About />} />
-        <Route path="create" element={<Create />} />
-      </Routes>
-    </TransactionsProvider>
+        <TransactionsProvider>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="send" element={<Send />} />
+            <Route path="stake" element={<Stake />} />
+            <Route path="investments" element={<Investments />} />
+            <Route path="about" element={<About />} />
+            <Route path="create" element={<Create />} />
+          </Routes>
+        </TransactionsProvider>
 
-  </BrowserRouter>,
-  </MoralisProvider>
+      </BrowserRouter>,
+    </MoralisProvider>
   </React.StrictMode>,
   document.getElementById("root"),
 );
