@@ -29,14 +29,19 @@ const Navbar = () => {
         <Link to="/about">About</Link>
          */}
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <li key="bridge" className="bg-blue-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+          <a href="https://canto.io/bridge" target="_blank" rel="noreferrer">
+            Canto Multichain Bridge
+          </a>
+        </li>
+        <li key="borrow" className="bg-blue-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+          <a href="https://canto.io/lending" target="_blank" rel="noreferrer">
+            Borrow & Lend
+          </a>
+        </li>
         <li key="twitter" className="bg-blue-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
           <a href="https://twitter.com/holyaustin" target="_blank" rel="noreferrer">
             Follow us on Twitter
-          </a>
-        </li>
-        <li key="multichain" className="bg-blue-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-          <a href="https://test.multichain.org/#/router" target="_blank" rel="noreferrer">
-            Token Multichain Router
           </a>
         </li>
       </ul>
