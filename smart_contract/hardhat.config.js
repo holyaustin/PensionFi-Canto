@@ -8,11 +8,11 @@ module.exports = {
       chainId: 1337
     },
     testnet: {      
-      url: `https://rpc.testnet.fantom.network`,
+      url: `https://canto-testnet.plexnode.wtf`,
       accounts: [process.env.PRIVATE_KEY],
     },
     mainnet: {     
-      url: `https://rpcapi.fantom.network`,
+      url: `https://canto.slingshot.finance/`,
       accounts: [process.env.PRIVATE_KEY],
     },
   },

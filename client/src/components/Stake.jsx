@@ -8,7 +8,7 @@ import Modal from "./Modal";
 import StakeTable from "./StakeTable";
 import StakeContainer from "./StakeContainer";
 
-const CONTRACT_ADDRESS = "0x60cF847C6Ea49009ae290F749451F4CB66CAD0B2";
+const CONTRACT_ADDRESS = "0x8D36089AB6eFdB3FEb2D8Ed42F7eC80f3c6d2b11";
 
 function Stake() {
   // General frontend variables

@@ -1,5 +1,5 @@
 # PensionFi - Web3 Pension Managers
-A Defi DApp that allows users to contribute part of their salary as pension. the contributed fund is staked and generates reward for the user over a period of time. This is where Traditional Finance (TradFi) meets Decentralized Finance (DeFI). 
+A Defi DApp that allows users to contribute part of their salary as pension. the contributed fund is staked and generates reward for the user over a period of time. This is where Traditional Finance (TradFi) meets Decentralized Finance (DeFI).
 
 ![PensionFi](https://i.ibb.co/f0fwrtd/logoblack.png)
 
@@ -13,18 +13,18 @@ PensionFi is a web3 Pension Management Platform for users who wish to start cont
 * Users will be able to see the remaining days until lock period and Interest ratio
 * Contract owner will be able to create more staking tiers
 
-## Deployed Contract Address on Fantom Testnet
+## Deployed Contract Address on Canto Testnet
 
 PensionFi : https://testnet.ftmscan.com/address/0x60cf847c6ea49009ae290f749451f4cb66cad0b2
 
 Profile :https://testnet.ftmscan.com/address/0xe078fe7A93017F8e18c1C52E79632d0B94c56c26
 
-## Aave Contracts Address Deployed on Fantom Testnet
+## Aave Contracts Address Deployed on Canto Testnet
 WETH Gateway : https://testnet.ftmscan.com/address/0x87770f04Bbece8092d777860907798138825f303
 
-Pool-Proxy-Fantom : https://testnet.ftmscan.com/address/0x771A45a19cE333a19356694C5fc80c76fe9bc741
+Pool-Proxy-Canto : https://testnet.ftmscan.com/address/0x771A45a19cE333a19356694C5fc80c76fe9bc741
 
-WFTM-TestnetMintableERC20-Fantom (WFTM) : https://testnet.ftmscan.com/address/0xF7475b635EbE06d9C5178CC40D50856Fa98C7332
+WFTM-TestnetMintableERC20-Canto (WFTM) : https://testnet.ftmscan.com/address/0xF7475b635EbE06d9C5178CC40D50856Fa98C7332
 
 ## Web 3.0 technologies Used
 
@@ -32,7 +32,7 @@ Frontend: vite, postcss, tailwindcss,
 web3 technologies: IPFS/filecoin, Moralis Wallet
 Backend: Solidity, Node.js
 
-Live URL - https://pensionfi-ftm.vercel.app/
+Live URL - https://pension-fi-canto.vercel.app/
 
 Youtube Video: https://youtu.be/4ILUcBgunEA
 
@@ -44,7 +44,4 @@ stay connected on twitter @holyaustin
 New features will be introduced. 
 Adding more support to several tokens like
 
-Aave, DAI, USDC, WBTC, WETH
-
-Currently suporting FTM / WFTM
-
+CANTO, mCANTO, USDC, WCANTO

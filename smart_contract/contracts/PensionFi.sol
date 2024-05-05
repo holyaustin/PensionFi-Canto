@@ -10,27 +10,26 @@ import "./interfaces/IWETHGateway.sol";
 /// @author @holyaustin
 /// @notice This contract is for creating a DeFi CANTO staking dapp to generate passive income yield on your CANTO deposited as Pension
 /// @dev This contract implements three different staking periods with three different APY percentages
-/// @dev This contract integrates with Aave to lend for passive income yield on the stored funnds in the contract
-/// @dev The contract implements WETH Gateway to convert CANTO to WETH and deposit to Aave lending pool and Vice versa
+/// @dev This contract integrates with Canto to lend for passive income yield on the stored funnds in the contract
+/// @dev The contract implements WETH Gateway to convert CANTO to WETH and deposit to Canto lending pool and Vice versa
 /// @dev Here is the URL for the WETH Gateway: https://docs.aave.com/developers/v/2.0/the-core-protocol/weth-gateway 
 
 contract PensionFi {
 
-    //IWETHGateway interface for the Mumbai testnet
-    IWETHGateway public iWethGateway = IWETHGateway(0x87770f04Bbece8092d777860907798138825f303);
+    //IWETHGateway interface for the Canto testnet
+    IWETHGateway public iWethGateway = IWETHGateway(0x04a72466De69109889Db059Cb1A4460Ca0648d9D);
 
     //ILendingPool interface
-    //Pool-Proxy-Fantom - 0x771A45a19cE333a19356694C5fc80c76fe9bc741
-    ILendingPool public iLendingPool = ILendingPool(0x771A45a19cE333a19356694C5fc80c76fe9bc741);
+    //Pool-CantoETH - 0xf301c9d5804Fab3dd207ef75f78509db6393f37F
+    ILendingPool public iLendingPool = ILendingPool(0xf301c9d5804Fab3dd207ef75f78509db6393f37F);
 
-    //Lending Pool / PoolAddressesProvider-Aave address for the Aave (v3) lending pool on  testnet
-    // PoolAddressesProvider-Fantom -0xE339D30cBa24C70dCCb82B234589E3C83249e658
-    address public constant lendingPoolAddress = (0x771A45a19cE333a19356694C5fc80c76fe9bc741);
+    //Lending Pool / PoolAddressesProvider-Canto address for the Canto lending pool on  testnet
+    // PoolAddressesProvider-Canto -0xf301c9d5804Fab3dd207ef75f78509db6393f37F
+    address public constant lendingPoolAddress = (0xf301c9d5804Fab3dd207ef75f78509db6393f37F);
 
     //Contract Address for the amWeth tokens generated after depositing CANTO to keep track of the amount deposited in lending pool
-    //0xfB6A6A48e81F8E0a0cC35cca4ea1946869Cc5F00 weth next is wftm
-    //0xF7475b635EbE06d9C5178CC40D50856Fa98C7332
-    address public constant aWethAddress = (0xF7475b635EbE06d9C5178CC40D50856Fa98C7332);
+    //0x477eaF5DECf6299EE937954084f0d53EFc57346F
+    address public constant aWethAddress = (0x477eaF5DECf6299EE937954084f0d53EFc57346F);
 
     address public owner;
 
@@ -82,7 +81,7 @@ contract PensionFi {
     /// @notice stakeEther function allows user to deposit CANTO funds to the PensionFi contract
     /// @notice Once the user deposits CANTO, a position is created
     /// @notice positionId is pushed to the positionIdsByAddress mapping to keep track of all position of a user
-    /// @dev the iWethGateway interface then take funds from the contract and deposits them to the Aave lending pool
+    /// @dev the iWethGateway interface then take funds from the contract and deposits them to the Canto lending pool
     /// @dev amWeth tokens are generated and balance of contract is updated (amWeth tokens) to keep track of the amount lended to the lendingPool and interest generated
     function stakeEther(uint numDays) external payable {
         //To make sure that the number of Days belong to one of the tiers
@@ -103,7 +102,7 @@ contract PensionFi {
         positionIdsByAddress[msg.sender].push(currentPositionId);
         currentPositionId += 1;
 
-        //Deposit CANTO via WETHGateway
+        //Deposit CANTO via WCantoGateway
         //It will convert CANTO to WETH and also send funds to the lending pool
         iWethGateway.depositETH{value: msg.value}(lendingPoolAddress, address(this), 0);
     }
@@ -143,7 +142,7 @@ contract PensionFi {
 
         //Withdraw lended funds via the Weth Gateway
         //It will convert back the WETH to CANTO and send it to the contract
-        //Ensure you set the relevant ERC20 allowance of amWeth, before calling this function, so the WETHGateway contract can burn the associated amWeth
+        //Ensure you set the relevant ERC20 allowance of amWeth, before calling this function, so the WCantoGateway contract can burn the associated amWeth
         IERC20(aWethAddress).approve(address(iWethGateway), type(uint256).max);
         iWethGateway.withdrawETH(lendingPoolAddress, positions[positionId].weiStaked, address(this));
 
