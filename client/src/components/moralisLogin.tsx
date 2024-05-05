@@ -56,6 +56,7 @@ function MoralisLogin() {
  }
  
 
+      {/**
         <div className="p-3 flex justify-end items-start flex-col rounded-xl h-80 sm:w-120  my-5 eth-card .white-glassmorphism ">
             <div className="flex justify-between flex-col w-full h-full">
               <div className="flex justify-between items-start">
@@ -80,8 +81,9 @@ function MoralisLogin() {
             </div>
           
           </div>
-
+ */}
     </div>
+
   );
 }
 
