@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable max-len */
 import React from "react";
 
 const StakeContainer = ({ openStakingModal }) => (
